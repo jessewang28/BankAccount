@@ -11,7 +11,7 @@ public class SpecialCheckingAccount extends CheckingAccount{
     }
 
     public void clearCheck(double amount) {
-        if (currentBalance()>=minBalance){
+        if (currentBalance()>minBalance){
             decreaseBalance(amount);
         }
         else{
@@ -19,6 +19,14 @@ public class SpecialCheckingAccount extends CheckingAccount{
         }
     }
 
-    
-
+    public double monthlyInterest(){
+        if(currentBalance() > minBalance){
+            double annual = currentBalance()*interestRate;
+            return annual/12;
+        }
+        else {
+            return super.monthlyInterest();
+        }
+    }
 }
+
