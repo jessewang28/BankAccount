@@ -10,10 +10,15 @@ public class SpecialCheckingAccount extends CheckingAccount{
         interestRate = iRate;
     }
 
-    public void clearCheck(double amount)
-    {
-        decreaseBalance(amount + checkCharge);
+    public void clearCheck(double amount) {
+        if (currentBalance()>=minBalance){
+            decreaseBalance(amount);
+        }
+        else{
+            super.clearCheck(amount);
+        }
     }
 
+    
 
 }
