@@ -16,7 +16,7 @@ public class AccountTester {
         sa.deposit(50.0);
         sa.withdraw(600.0);
         sa.withdraw(100.0);
-        System.out.println("250.0 " +sa.currentBalance());
+        System.out.println("250.0 " + sa.currentBalance());
 
         SpecialCheckingAccount sca1 = new SpecialCheckingAccount(1235, 350.0, 2.5, 0.05, 500.0);
         System.out.println("Special Account " + sca1.currentBalance());
@@ -30,10 +30,12 @@ public class AccountTester {
         sca2.deposit(245.0);
         System.out.println("895.0 " + sca2.currentBalance());
 
-        Account [] accounts = {ca, sa, sca1, sca2};
-        for(Account a: accounts){
+        Account[] accounts = {ca, sa, sca1, sca2};
+        for (Account a : accounts) {
             System.out.println("Account " + a.idNumber());
             System.out.println("Balance " + a.currentBalance());
             System.out.println("Interest " + a.monthlyInterest());
         }
         System.out.println("Interest: 1.0, .833, 1.0, 3.73");
+    }
+}

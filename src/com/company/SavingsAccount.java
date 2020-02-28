@@ -2,10 +2,10 @@ package com.company;
 
 public class SavingsAccount extends Account{
     private double a;
-    public SavingsAccount(int id, double startBal, double AnnualIRate)
+    public SavingsAccount(int id, double startBal, double iRate)
     {
         super(id, startBal);
-        a = AnnualIRate;
+        a = iRate;
     }
 
     public void withdraw(double withdraw){
